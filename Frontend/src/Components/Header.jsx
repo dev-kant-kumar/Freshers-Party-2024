@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../src/assets/images/logo.png";
 
 function Header() {
   return (
     <div className="header-wrapper">
       <section className="logo-wrapper">
+        <img src={logo} alt="" />
         <div className="logo">Freshers Party</div>
       </section>
       <section className="nav-menu-wrapper">

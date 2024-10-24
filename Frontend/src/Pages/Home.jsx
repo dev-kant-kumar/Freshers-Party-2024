@@ -21,7 +21,9 @@ function Home() {
       <div className="faqs-wrapper">
         <section className="faqs-header">
           <p>Frequently asked questions</p>
-          <p className="sub-title">Everything you need to know about the freshers party.</p>
+          <p className="sub-title">
+            Everything you need to know about the freshers party.
+          </p>
         </section>
 
         <section className="faqs-main">

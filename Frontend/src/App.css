@@ -35,8 +35,18 @@ body {
   font-weight: 600;
   color: #ede3f4;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+.logo-wrapper img {
+  block-size: 2.5rem;
+}
+
+.logo {
+  align-self: flex-end;
+}
 .nav-menu-wrapper {
   /* inline-size: 60%; */
   display: flex;
@@ -247,7 +257,7 @@ body {
   margin-inline: auto;
   padding-inline: 30px;
   padding-block-start: 80px;
-  padding-block-end:30px;
+  padding-block-end: 30px;
   inline-size: fit-content;
 }
 .faqs-header p {
