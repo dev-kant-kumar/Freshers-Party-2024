@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import CalIcon from "../../assets/images/uis--calender.png";
 import locIcon from "../../assets/images/carbon--location-filled.png";
+import timeIcon from "../../assets/images/time.png";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import Button from "@mui/material/Button";
+import InvitationForm from "../Invitation/InvitationForm"; // Import the form component
 
 function Hero() {
   const targetDate = new Date(2024, 9, 27, 9, 0, 0); // Target date: October 27th, 2024, 9:00 AM
@@ -10,6 +15,16 @@ function Hero() {
     minutes: 0,
     seconds: 0,
   });
+
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
     const updateTime = () => {
@@ -32,6 +47,7 @@ function Hero() {
 
     return () => clearInterval(intervalId); // Clean up the interval on unmount
   }, [targetDate]);
+
   return (
     <div className="hero-wrapper">
       <section className="hero-body-wrapper">
@@ -43,20 +59,23 @@ function Hero() {
             Get ready to embark on an unforgettable journey as we welcome the
             next generation of tech enthusiasts!
           </p>
-          <button>Join the Party</button>
+          {/* Button to trigger modal */}
+          <Button variant="contained" onClick={handleOpenModal}>
+            Join the Party
+          </Button>
         </section>
         <section className="hero-head">
           <div className="hero-head-venue-date">
             <div className="venue-date-1">
-              <img src={CalIcon} alt="" />
+              <img src={CalIcon} alt="Calendar Icon" />
               <p>October 27th ' 2024</p>
             </div>
             <div className="venue-date-2">
-              <img src={CalIcon} alt="" />
+              <img src={timeIcon} alt="Time Icon" />
               <p>09:00 am - 06:00 pm</p>
             </div>
             <div className="venue-date-3">
-              <img src={locIcon} alt="" />
+              <img src={locIcon} alt="Location Icon" />
               <p>Rings and Roses Banquet Hall</p>
             </div>
           </div>
@@ -82,6 +101,13 @@ function Hero() {
           </section>
         </div>
       </section>
+
+      {/* Modal for InvitationForm */}
+      <Dialog open={isModalOpen} onClose={handleCloseModal}>
+        <DialogContent>
+          <InvitationForm /> {/* Form Component */}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
