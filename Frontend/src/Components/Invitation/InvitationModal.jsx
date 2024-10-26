@@ -38,14 +38,14 @@ const StyledBox = styled(Box)(({ theme }) => ({
 }));
 
 const Header = styled(Typography)(({ theme }) => ({
-  fontSize: "32px",
+  fontSize: "30px",
   fontWeight: "bold",
   marginBottom: "10px",
   color: "#FFC300",
   textAlign: "center",
   textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
   [theme.breakpoints.down("sm")]: {
-    fontSize: "24px",
+    fontSize: "20px",
   },
 }));
 
@@ -55,7 +55,7 @@ const Content = styled(Typography)(({ theme }) => ({
   marginBottom: "20px",
   color: "#f7e6d3",
   [theme.breakpoints.down("sm")]: {
-    fontSize: "16px",
+    fontSize: "14px",
   },
 }));
 
