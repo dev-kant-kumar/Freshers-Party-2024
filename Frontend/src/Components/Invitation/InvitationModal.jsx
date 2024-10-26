@@ -39,11 +39,26 @@ const StyledBox = styled(Box)(({ theme }) => ({
 
 const Header = styled(Typography)(({ theme }) => ({
   fontSize: "30px",
-  fontWeight: "bold",
+  fontWeight: "900",
   marginBottom: "10px",
-  color: "#FFC300",
   textAlign: "center",
-  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
+  paddingBlockStart: "20px",
+  color: "#FFFFFF", // Default color for emojis and text
+
+  // 3D text effect using multiple text shadows
+  textShadow: `
+    1px 1px 0 rgba(0, 0, 0, 0.5),   // Dark shadow
+    2px 2px 0 rgba(255, 0, 0, 0.5), // Red shadow for depth
+    3px 3px 0 rgba(255, 255, 0, 0.5) // Yellow shadow for more depth
+  `,
+
+  // Apply gradient only to span for text effect
+  "& span": {
+    background: "#9B2242",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  },
+
   [theme.breakpoints.down("sm")]: {
     fontSize: "20px",
   },
@@ -53,8 +68,15 @@ const Content = styled(Typography)(({ theme }) => ({
   fontSize: "18px",
   textAlign: "center",
   marginBottom: "20px",
-  color: "#f7e6d3",
-  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
+  color: "#f7e6d3", // Default color for the text
+
+  // // 3D text effect using multiple text shadows
+  // textShadow: `
+  //   1px 1px 0 rgba(0, 0, 0, 0.5),
+  //    2px 2px 0 rgba(255, 165, 0, 0.5),
+  //   3px 3px 0 rgba(255, 255, 0, 0.5)
+  // `,
+
   [theme.breakpoints.down("sm")]: {
     fontSize: "14px",
   },
@@ -99,6 +121,18 @@ const CloseButton = styled(Button)(({ theme }) => ({
   },
 }));
 
+const DownloadButton = styled(Button)(({ theme }) => ({
+  marginBottom: "10px",
+  background:
+    "radial-gradient(circle at -8.9% 51.2%, rgb(255, 124, 0) 0%, rgb(255, 124, 0) 15.9%, rgb(255, 163, 77) 15.9%, rgb(255, 163, 77) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%)",
+  color: "#fff",
+  "&:hover": {
+    background:
+      "radial-gradient(circle at -8.9% 51.2%, rgb(255, 124, 0) 0%, rgb(255, 124, 0) 15.9%, rgb(255, 163, 77) 15.9%, rgb(255, 163, 77) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%)", // Keep gradient on hover
+    opacity: 0.9, // Slight opacity change on hover
+  },
+}));
+
 // Keyframes for the border rotation animation
 const styles = {
   "@keyframes spin": {
@@ -134,7 +168,9 @@ export default function InvitationModal({
   return (
     <Modal open={true} onClose={onClose}>
       <StyledBox id="invitation-content" sx={styles}>
-        <Header>🎉 Freshers Party Invitation 🎉</Header>
+        <Header>
+          🎉 <span>Freshers Party Invitation</span> 🎉
+        </Header>
 
         <Content>
           Dear <strong>{name}</strong> from <strong>{semester}</strong> (Class
@@ -181,14 +217,9 @@ export default function InvitationModal({
           </DetailItem>
         </InvitationDetails>
 
-        <Button
-          onClick={handleDownloadImage}
-          variant="contained"
-          color="secondary"
-          style={{ marginBottom: "10px" }}
-        >
+        <DownloadButton onClick={handleDownloadImage} variant="contained">
           Download as Image
-        </Button>
+        </DownloadButton>
 
         <CloseButton onClick={onClose}>Close</CloseButton>
       </StyledBox>
