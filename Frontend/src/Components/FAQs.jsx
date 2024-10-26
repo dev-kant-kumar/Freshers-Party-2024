@@ -50,7 +50,6 @@ function FAQs() {
     }));
   };
 
-  console.log(isActive);
   return (
     <div className="accordion-main-wrapper">
       {accordionData.map((item, index) => {
