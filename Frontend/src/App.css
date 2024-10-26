@@ -423,6 +423,7 @@ body {
     padding-inline: 15px;
     font-size: 12px;
   }
+
   .hero-body-wrapper {
     margin-block-start: 68px;
   }
@@ -439,9 +440,58 @@ body {
   .hero-body .p-2 {
     font-size: 24px;
   }
-
   .hero-body button {
     font-size: 12px;
+  }
+  .hero-head-venue-date {
+    flex-direction: column;
+  }
+  .venue-date-1 {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0px;
+  }
+  .venue-date-3 {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  .hero-head-venue-date p {
+    font-size: 1.1rem;
+  }
+  .hero-head {
+    margin-block-start: 30px;
+    width: 92%;
+  }
+
+  .hero-body {
+    padding-block-start: 60px;
+    padding-inline: 28px;
+  }
+
+  /* hero foot section - timer */
+
+  .timer-wrapper {
+    gap: 15px;
+  }
+  .time-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .time-container .content {
+    block-size: 70px;
+    inline-size: 70px;
+    font-size: 35px;
+  }
+
+  .time-container .label {
+    font-size: 16px;
+  }
+
+  .faqs-wrapper {
+    padding-bottom: 50px;
   }
   .faqs-main {
     inline-size: 95%;
@@ -457,51 +507,21 @@ body {
     align-items: center;
     justify-content: center;
   }
+}
 
-  .hero-head-venue-date {
-    flex-direction: column;
-  }
-  .venue-date-1 {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 0px;
-  }
-  .venue-date-3 {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-  }
-  .timer-wrapper {
-    gap: 15px;
-  }
-  .hero-head {
-    margin-block-start: 30px;
-    width: 92%;
-  }
-  .time-container {
-    inline-size: 95%;
-  }
-  .time-container .content {
-    block-size: 20vw;
-    inline-size: 20vw;
-  }
-  .hero-body {
-    padding-block-start: 60px;
-    padding-inline: 28px;
-  }
-  .faqs-wrapper {
-    padding-bottom: 50px;
-  }
-  .hero-foot {
-    /* padding-block-start: 210px; */
-  }
-  .hero-head-venue-date p {
-    font-size: 1.1rem;
-  }
-  .time-container p {
-    font-size: 28px;
-  }
-  .time-container .content {
-    font-size: 25px;
-  }
+#invitation-content {
+  outline: 2px solid #bff29f;
+  outline-offset: -7px;
+}
+
+#invitation-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 200, 0.1);
+  border-radius: 20px;
+  z-index: 0;
 }
