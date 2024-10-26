@@ -12,11 +12,11 @@ import html2canvas from "html2canvas";
 import BackgroundImage from "../../assets/images/5452469.jpg";
 
 // Styled components for the modal
-const StyledBox = styled(Box)({
-  width: "70%",
-  height: "70%",
-  marginInline: "auto",
-  marginBlockStart: "40px",
+const StyledBox = styled(Box)(({ theme }) => ({
+  width: "90%",
+  maxWidth: "600px",
+  height: "80%",
+  margin: "40px auto",
   backgroundColor: "rgba(255, 255, 255, 0.8)",
   borderRadius: "20px",
   boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)",
@@ -31,23 +31,33 @@ const StyledBox = styled(Box)({
   overflow: "hidden",
   animation: "fadeIn 1s ease-in-out",
   border: "2px solid transparent",
-});
+  [theme.breakpoints.down("sm")]: {
+    height: "90%",
+    padding: "10px",
+  },
+}));
 
-const Header = styled(Typography)({
+const Header = styled(Typography)(({ theme }) => ({
   fontSize: "32px",
   fontWeight: "bold",
   marginBottom: "10px",
   color: "#FFC300",
   textAlign: "center",
-  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)", // Added text shadow
-});
+  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "24px",
+  },
+}));
 
-const Content = styled(Typography)({
+const Content = styled(Typography)(({ theme }) => ({
   fontSize: "18px",
   textAlign: "center",
   marginBottom: "20px",
-  color: "#f7e6d3", // Dark text for better readability
-});
+  color: "#f7e6d3",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "16px",
+  },
+}));
 
 const CountdownContainer = styled("div")({
   display: "flex",
@@ -80,13 +90,13 @@ const DetailItem = styled("div")({
   fontSize: "18px",
 });
 
-const CloseButton = styled(Button)({
+const CloseButton = styled(Button)(({ theme }) => ({
   backgroundColor: "#4CAF50",
   color: "#fff",
   "&:hover": {
     backgroundColor: "#45a049",
   },
-});
+}));
 
 // Keyframes for the border rotation animation
 const styles = {
