@@ -212,8 +212,7 @@ body {
 }
 
 .hero-foot {
-  /* outline: 1px solid black; */
-  padding-block: 100px;
+  padding-block: 90px;
 }
 
 .timer-wrapper {
@@ -278,98 +277,6 @@ body {
   margin-inline: auto;
 }
 /* footer styling section */
-
-/* responsiveness */
-@media (min-width: 320px) and (max-width: 767px) {
-  .logo-wrapper {
-    font-size: 18px;
-  }
-  .header-wrapper {
-    padding-inline: 20px;
-    padding-block: 15px;
-  }
-  .logo-wrapper img {
-    block-size: 2rem;
-  }
-  .nav-btn button {
-    padding-block: 8px;
-    padding-inline: 15px;
-    font-size: 12px;
-  }
-  .hero-body-wrapper {
-    margin-block-start: 68px;
-  }
-  .hero-body .p-1 {
-    font-size: 38px;
-    line-height: 54px;
-    margin-block-end: 10px;
-  }
-
-  .hero-body .p-2 {
-    font-size: 24px;
-  }
-
-  .hero-body button {
-    font-size: 12px;
-  }
-  .faqs-main {
-    inline-size: 95%;
-  }
-  .accordion-sections {
-    padding-inline: 18px;
-    padding-block: 18px;
-    margin-block: 20px;
-  }
-  .accordion-btn-wrapper,
-  .accordion-btn-wrapper-active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero-head-venue-date {
-    flex-direction: column;
-  }
-  .venue-date-1 {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 0px;
-  }
-  .venue-date-3 {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-  }
-  .timer-wrapper {
-    gap: 15px;
-  }
-  .hero-head {
-    margin-block-start: 30px;
-    width: 92%;
-  }
-  .time-container .content {
-    block-size: 75px;
-    inline-size: 75px;
-  }
-  .hero-body {
-    padding-block-start: 60px;
-    padding-inline: 28px;
-  }
-  .faqs-wrapper {
-    padding-bottom: 50px;
-  }
-  .hero-foot {
-    padding-block-start: 210px;
-  }
-  .hero-head-venue-date p {
-    font-size: 1.1rem;
-  }
-  .time-container p {
-    font-size: 28px;
-  }
-  .time-container .content {
-    font-size: 25px;
-  }
-}
 
 /* Invitation form styling section */
 
@@ -497,4 +404,104 @@ body {
     rgb(144, 17, 105) 0%,
     rgb(51, 0, 131) 100.2%
   ) !important;
+}
+
+/* responsiveness */
+@media (min-width: 320px) and (max-width: 767px) {
+  .logo-wrapper {
+    font-size: 18px;
+  }
+  .header-wrapper {
+    padding-inline: 20px;
+    padding-block: 15px;
+  }
+  .logo-wrapper img {
+    block-size: 2rem;
+  }
+  .nav-btn button {
+    padding-block: 8px;
+    padding-inline: 15px;
+    font-size: 12px;
+  }
+  .hero-body-wrapper {
+    margin-block-start: 68px;
+  }
+  .hero-body-wrapper {
+    block-size: fit-content;
+    padding-block-end: 30px;
+  }
+  .hero-body .p-1 {
+    font-size: 38px;
+    line-height: 54px;
+    margin-block-end: 10px;
+  }
+
+  .hero-body .p-2 {
+    font-size: 24px;
+  }
+
+  .hero-body button {
+    font-size: 12px;
+  }
+  .faqs-main {
+    inline-size: 95%;
+  }
+  .accordion-sections {
+    padding-inline: 18px;
+    padding-block: 18px;
+    margin-block: 20px;
+  }
+  .accordion-btn-wrapper,
+  .accordion-btn-wrapper-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-head-venue-date {
+    flex-direction: column;
+  }
+  .venue-date-1 {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0px;
+  }
+  .venue-date-3 {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  .timer-wrapper {
+    gap: 15px;
+  }
+  .hero-head {
+    margin-block-start: 30px;
+    width: 92%;
+  }
+  .time-container {
+    inline-size: 95%;
+  }
+  .time-container .content {
+    block-size: 20vw;
+    inline-size: 20vw;
+  }
+  .hero-body {
+    padding-block-start: 60px;
+    padding-inline: 28px;
+  }
+  .faqs-wrapper {
+    padding-bottom: 50px;
+  }
+  .hero-foot {
+    /* padding-block-start: 210px; */
+  }
+  .hero-head-venue-date p {
+    font-size: 1.1rem;
+  }
+  .time-container p {
+    font-size: 28px;
+  }
+  .time-container .content {
+    font-size: 25px;
+  }
 }
