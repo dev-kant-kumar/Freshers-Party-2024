@@ -15,7 +15,7 @@ import BackgroundImage from "../../assets/images/5452469.jpg";
 const StyledBox = styled(Box)(({ theme }) => ({
   width: "90%",
   maxWidth: "600px",
-  height: "80%",
+  height: "fit-content",
   margin: "40px auto",
   backgroundColor: "rgba(255, 255, 255, 0.8)",
   borderRadius: "20px",
@@ -32,7 +32,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   animation: "fadeIn 1s ease-in-out",
   border: "2px solid transparent",
   [theme.breakpoints.down("sm")]: {
-    height: "90%",
+    height: "fit-content",
     padding: "10px",
   },
 }));

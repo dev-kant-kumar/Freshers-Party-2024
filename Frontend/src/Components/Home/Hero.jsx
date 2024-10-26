@@ -72,7 +72,7 @@ function Hero() {
             </div>
             <div className="venue-date-2">
               <img src={timeIcon} alt="Time Icon" />
-              <p>09:00 am - 06:00 pm</p>
+              <p>11:00 am - 06:00 pm</p>
             </div>
             <div className="venue-date-3">
               <img src={locIcon} alt="Location Icon" />
