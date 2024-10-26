@@ -280,7 +280,7 @@ body {
 /* footer styling section */
 
 /* responsiveness */
-@media (max-width: 650px) {
+@media (min-width: 320px) and (max-width: 767px) {
   .header-wrapper {
     padding-inline: 20px;
     padding-block: 15px;
@@ -333,6 +333,7 @@ body {
   .hero-head {
     margin-block-start: 30px;
     width: 92%;
+    outline: 10px solid black;
   }
   .time-container .content {
     block-size: 75px;
