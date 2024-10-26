@@ -14,11 +14,35 @@ export default function InvitationForm() {
     semester: "",
     classRoll: "",
   });
+  const [errors, setErrors] = useState({
+    name: "",
+    classRoll: "",
+  });
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    // Real-time validation
+    if (name === "name") {
+      const isValidName = /^[A-Za-z\s]*$/.test(value) && value.length <= 50;
+      setErrors({
+        ...errors,
+        name: isValidName
+          ? ""
+          : "Name must contain only letters and whitespace, max 50 characters",
+      });
+    } else if (name === "classRoll") {
+      const isValidClassRoll =
+        /^[0-9]*$/.test(value) && value >= 1 && value <= 60;
+      setErrors({
+        ...errors,
+        classRoll: isValidClassRoll
+          ? ""
+          : "Class Roll must be a number between 1 and 60",
+      });
+    }
   };
 
   const handleSelectChange = (e) => {
@@ -27,6 +51,27 @@ export default function InvitationForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Final validation before submission
+    const isValidName =
+      /^[A-Za-z\s]*$/.test(formData.name) && formData.name.length <= 50;
+    const isValidClassRoll =
+      /^[0-9]*$/.test(formData.classRoll) &&
+      formData.classRoll >= 1 &&
+      formData.classRoll <= 60;
+
+    if (!isValidName || !isValidClassRoll) {
+      setErrors({
+        name: isValidName
+          ? ""
+          : "Name must contain only letters and whitespace, max 50 characters",
+        classRoll: isValidClassRoll
+          ? ""
+          : "Class Roll must be a number between 1 and 60",
+      });
+      return;
+    }
+
     if (formData.name && formData.semester && formData.classRoll) {
       setIsModalOpen(true);
     }
@@ -53,6 +98,9 @@ export default function InvitationForm() {
           required
           variant="outlined"
           margin="normal"
+          error={!!errors.name}
+          helperText={errors.name}
+          inputProps={{ maxLength: 50 }}
           sx={{
             input: { color: "white" },
             label: { color: "#fff" },
@@ -81,8 +129,8 @@ export default function InvitationForm() {
               },
             }}
           >
-            <MenuItem value="1st">1st Semester</MenuItem>
-            <MenuItem value="2nd">2nd Semester</MenuItem>
+            <MenuItem value="BCA 1st">1st Semester</MenuItem>
+            <MenuItem value="BCA 2nd">2nd Semester</MenuItem>
           </Select>
         </FormControl>
 
@@ -95,6 +143,8 @@ export default function InvitationForm() {
           required
           variant="outlined"
           margin="normal"
+          error={!!errors.classRoll}
+          helperText={errors.classRoll}
           sx={{
             input: { color: "white" },
             label: { color: "#fff" },

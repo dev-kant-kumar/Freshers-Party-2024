@@ -10,6 +10,8 @@ import EventNoteIcon from "@mui/icons-material/EventNote";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import html2canvas from "html2canvas";
 import BackgroundImage from "../../assets/images/b2.jpg";
+import "typeface-poppins";
+import "@fontsource/dynapuff"; // Defaults to weight 400
 
 // Styled components for the modal
 const StyledBox = styled(Box)(({ theme }) => ({
@@ -31,6 +33,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   overflow: "hidden",
   animation: "fadeIn 1s ease-in-out",
   border: "2px solid transparent",
+  textWrap: "pretty",
   [theme.breakpoints.down("sm")]: {
     height: "fit-content",
     padding: "10px",
@@ -65,17 +68,19 @@ const Header = styled(Typography)(({ theme }) => ({
 }));
 
 const Content = styled(Typography)(({ theme }) => ({
+  paddingInline: "20px",
   fontSize: "18px",
   textAlign: "center",
+  fontWeight: "700",
+  fontFamily: "'DynaPuff', sans-serif",
   marginBottom: "20px",
-  color: "#f7e6d3", // Default color for the text
+  color: "#0D093B", // Fallback color for non-supporting browsers
 
-  // 3D text effect using multiple text shadows
-  textShadow: `
-    1px 1px 0 rgba(0, 0, 0, 0.5),
-     2px 2px 0 rgba(255, 165, 0, 0.5),
-    3px 3px 0 rgba(255, 255, 0, 0.5)
-  `,
+  // // Gradient effect for the text
+  // background:
+  //   "linear-gradient(178.1deg, rgb(60, 55, 106) 8.5%, rgb(23, 20, 69) 82.4%)",
+  // WebkitBackgroundClip: "text",
+  // WebkitTextFillColor: "transparent",
 
   [theme.breakpoints.down("sm")]: {
     fontSize: "14px",
@@ -156,11 +161,13 @@ export default function InvitationModal({
 }) {
   const handleDownloadImage = () => {
     const element = document.getElementById("invitation-content");
-    html2canvas(element).then((canvas) => {
-      const dataUrl = canvas.toDataURL("image/png");
+
+    html2canvas(element, { scale: 3 }).then((canvas) => {
+      // Increase scale for higher resolution
+      const dataUrl = canvas.toDataURL("image/png", 1.0); // Set quality to 1 for best quality
       const link = document.createElement("a");
       link.href = dataUrl;
-      link.download = "invitation.png"; // Specify the filename
+      link.download = "bca-freshers-invitation.png"; // Specify the filename
       link.click();
     });
   };
