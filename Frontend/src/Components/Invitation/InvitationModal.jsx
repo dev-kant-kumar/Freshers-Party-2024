@@ -9,7 +9,7 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import EventNoteIcon from "@mui/icons-material/EventNote";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import html2canvas from "html2canvas";
-import BackgroundImage from "../../assets/images/5452469.jpg";
+import BackgroundImage from "../../assets/images/b2.jpg";
 
 // Styled components for the modal
 const StyledBox = styled(Box)(({ theme }) => ({
@@ -54,6 +54,7 @@ const Content = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   marginBottom: "20px",
   color: "#f7e6d3",
+  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
   [theme.breakpoints.down("sm")]: {
     fontSize: "14px",
   },
