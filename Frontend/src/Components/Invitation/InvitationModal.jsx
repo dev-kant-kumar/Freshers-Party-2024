@@ -70,12 +70,12 @@ const Content = styled(Typography)(({ theme }) => ({
   marginBottom: "20px",
   color: "#f7e6d3", // Default color for the text
 
-  // // 3D text effect using multiple text shadows
-  // textShadow: `
-  //   1px 1px 0 rgba(0, 0, 0, 0.5),
-  //    2px 2px 0 rgba(255, 165, 0, 0.5),
-  //   3px 3px 0 rgba(255, 255, 0, 0.5)
-  // `,
+  // 3D text effect using multiple text shadows
+  textShadow: `
+    1px 1px 0 rgba(0, 0, 0, 0.5),
+     2px 2px 0 rgba(255, 165, 0, 0.5),
+    3px 3px 0 rgba(255, 255, 0, 0.5)
+  `,
 
   [theme.breakpoints.down("sm")]: {
     fontSize: "14px",
